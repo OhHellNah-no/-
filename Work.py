@@ -1,8 +1,12 @@
 from faker import Faker
 import csv
 import random
-alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-domens = ["@yandex.ru", "@mail.ru", "@Gmail.com", "@hc.ru", "@r01.ru", "@reg.ru", "@sweb.ru"]
+alphabet = ["a", "b", "c", "d", "e", "f", "g", "h",
+            "i", "j", "k", "l", "m", "n", "o", "p",
+            "q", "r", "s", "t", "u", "v", "w", "x",
+            "y", "z"]
+domens = ["@yandex.ru", "@mail.ru", "@Gmail.com",
+          "@hc.ru", "@r01.ru", "@reg.ru", "@sweb.ru"]
 nickname = []
 a = 1
 mail = ""
@@ -18,16 +22,16 @@ with open("users_1000000.csv", "a", newline="") as file:
     writer.writerow(
         ("Name", "Surname", "Phone", "Nickname", "Email")
     )
-while(a < 1000000):
+while (a < 1000000):
     person = list(fake.name())
-    while(person[2] == "."):
+    while (person[2] == "."):
         person = list(fake.name())
     for i in person:
-        if(i != " " and isSurName == False):
+        if (i != " " and isSurName == False):
             Iname.append(i)
         else:
             isSurName = True
-        if(isSurName == True and i != " "):
+        if (isSurName == True and i != " "):
             ISurName.append(i)
     name = "".join(Iname)
     surName = "".join(ISurName)
@@ -39,11 +43,11 @@ while(a < 1000000):
     phone.insert(12, "-")
     phone = "".join(phone)
     for _ in range(9, 19):
-        if(random.randint(0,1) == 0):
-            nickname.append(alphabet[random.randint(0,len(alphabet)-1)])
+        if (random.randint(0, 1) == 0):
+            nickname.append(alphabet[random.randint(0, len(alphabet)-1)])
         else:
-            nickname.append(str(random.randint(0,9)))
-    nickname.insert(random.randint(1,len(nickname)-2), "_")
+            nickname.append(str(random.randint(0, 9)))
+    nickname.insert(random.randint(1, len(nickname)-2), "_")
     nickname = "".join(nickname)
     mail = nickname + domens[random.randint(0, len(domens)-1)]
     with open("users_1000000.csv", "a", newline="") as file:
