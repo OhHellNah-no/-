@@ -27,7 +27,7 @@ while (a < 100):
     while (person[2] == "."):
         person = list(fake.name())
     for i in person:
-        if (i != " " and is_sur_name == False):
+        if (i != " " and is_sur_name):
             i_name.append(i)
         else:
             is_sur_name = True
@@ -64,4 +64,3 @@ while (a < 100):
     name = ""
     sur_name = ""
     a += 1
-
