@@ -11,12 +11,12 @@ nickname = []
 a = 1
 mail = ""
 fake = Faker()
-is_Sur_Name = False
+is_sur_name = False
 i_name = []
-i_Sur_Name = []
+i_sur_name = []
 phone = ["7"]
 name = ""
-sur_Name = ""
+sur_name = ""
 with open("users_100.csv", "a", newline="") as file:
     writer = csv.writer(file, delimiter=";")
     writer.writerow(
@@ -27,14 +27,14 @@ while (a < 100):
     while (person[2] == "."):
         person = list(fake.name())
     for i in person:
-        if (i != " " and is_Sur_Name == False):
+        if (i != " " and is_sur_name == False):
             i_name.append(i)
         else:
-            is_Sur_Name = True
-        if (is_Sur_Name == True and i != " "):
-            i_Sur_Name.append(i)
+            is_sur_name = True
+        if (is_sur_name and i != " "):
+            i_sur_name.append(i)
     name = "".join(i_name)
-    sur_Name = "".join(i_Sur_Name)
+    sur_name = "".join(i_sur_name)
     for _ in range(10):
         phone.append(str(random.randint(0, 9)))
     phone.insert(1, "-")
@@ -53,15 +53,15 @@ while (a < 100):
     with open("users_1000000.csv", "a", newline="") as file:
         writer = csv.writer(file, delimiter=";")
         writer.writerow(
-            (name, sur_Name, phone, nickname, mail)
+            (name, sur_name, phone, nickname, mail)
         )
     nickname = []
     mail = ""
-    is_Sur_Name = False
+    is_sur_name = False
     i_name = []
-    i_Sur_Name = []
+    i_sur_name = []
     phone = ["7"]
     name = ""
-    sur_Name = ""
+    sur_name = ""
     a += 1
 
