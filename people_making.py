@@ -18,12 +18,12 @@ i_sur_name = []
 phone = ["++7"]
 name = ""
 sur_name = ""
-with open("Users_10000.csv", "a", newline="") as file:
+with open("Users_250000.csv", "a", newline="") as file:
     writer = csv.writer(file, delimiter=";")
     writer.writerow(
         ("Name", "Surname", "Phone", "Nickname", "Email")
     )
-while (a < 10001):
+while (a < 250001):
     person = list(fake.name())
     while ("." in person):
         person = list(fake.name())
@@ -55,7 +55,7 @@ while (a < 10001):
     nickname.insert(random.randint(1, len(nickname)-2), "_")
     nickname = "".join(nickname)
     mail = nickname + domens[random.randint(0, len(domens)-1)]
-    with open("users_10000.csv", "a", newline="") as file:
+    with open("users_250000.csv", "a", newline="") as file:
         writer = csv.writer(file, delimiter=";")
         writer.writerow(
             (name, sur_name, phone, nickname, mail)
