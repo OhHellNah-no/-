@@ -24,7 +24,7 @@ with open("Users_10000.csv", "a", newline="") as file:
     )
 while (a < 10000):
     person = list(fake.name())
-    while ("." in person or "MD" in person):
+    while ("." in person or "MD" in person or "PhD" in person):
         person = list(fake.name())
     for i in person:
         if (i != " " and is_name):
