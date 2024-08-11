@@ -9,6 +9,7 @@ domens = ["@yandex.ru", "@mail.ru", "@Gmail.com",
           "@hc.ru", "@r.ru", "@reg.ru", "@sweb.ru"]
 nickname = []
 a = 1
+b = 0
 mail = ""
 fake = Faker()
 is_name = True
@@ -24,14 +25,17 @@ with open("Users_10000.csv", "a", newline="") as file:
     )
 while (a < 10000):
     person = list(fake.name())
-    while ("." in person or "MD" in person or "PhD" in person):
+    while ("." in person):
         person = list(fake.name())
     for i in person:
         if (i != " " and is_name):
             #print("!")
             i_name.append(i)
         else:
-            #print("!!")
+            if(i == " "):
+                b += 1
+                if(b == 2):
+                    break
             is_name = False
             i_sur_name.append(i)
         #if (is_name and i != " "):
@@ -68,4 +72,5 @@ while (a < 10000):
     phone = ["++7"]
     name = ""
     sur_name = ""
+    b = 0
     a += 1
