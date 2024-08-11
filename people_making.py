@@ -31,9 +31,9 @@ while (a < 10001):
         if (i != " " and is_name):
             i_name.append(i)
         else:
-            if(i == " "):
+            if (i == " "):
                 b += 1
-                if(b == 2):
+                if (b == 2):
                     break
             is_name = False
             i_sur_name.append(i)
