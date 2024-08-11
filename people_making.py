@@ -23,13 +23,12 @@ with open("Users_10000.csv", "a", newline="") as file:
     writer.writerow(
         ("Name", "Surname", "Phone", "Nickname", "Email")
     )
-while (a < 10000):
+while (a < 10001):
     person = list(fake.name())
     while ("." in person):
         person = list(fake.name())
     for i in person:
         if (i != " " and is_name):
-            #print("!")
             i_name.append(i)
         else:
             if(i == " "):
@@ -38,9 +37,6 @@ while (a < 10000):
                     break
             is_name = False
             i_sur_name.append(i)
-        #if (is_name and i != " "):
-            #print("!!!")
-            #i_sur_name.append(i)
     i_sur_name.remove(" ")
     name = "".join(i_name)
     sur_name = "".join(i_sur_name)
