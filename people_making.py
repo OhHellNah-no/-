@@ -17,7 +17,7 @@ i_sur_name = []
 phone = ["++7"]
 name = ""
 sur_name = ""
-with open("users_10000.csv", "a", newline="") as file:
+with open("Users_10000.csv", "a", newline="") as file:
     writer = csv.writer(file, delimiter=";")
     writer.writerow(
         ("Name", "Surname", "Phone", "Nickname", "Email")
