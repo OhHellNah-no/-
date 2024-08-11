@@ -11,7 +11,7 @@ nickname = []
 a = 1
 mail = ""
 fake = Faker()
-is_sur_name = False
+is_name = True
 i_name = []
 i_sur_name = []
 phone = ["++7"]
@@ -27,12 +27,17 @@ while (a < 10000):
     while (person[2] == "."):
         person = list(fake.name())
     for i in person:
-        if (i != " " and is_sur_name):
+        if (i != " " and is_name):
+            #print("!")
             i_name.append(i)
         else:
-            is_sur_name = True
-        if (is_sur_name and i != " "):
+            #print("!!")
+            is_name = False
             i_sur_name.append(i)
+        #if (is_name and i != " "):
+            #print("!!!")
+            #i_sur_name.append(i)
+    i_sur_name.remove(" ")
     name = "".join(i_name)
     sur_name = "".join(i_sur_name)
     for _ in range(10):
@@ -57,7 +62,7 @@ while (a < 10000):
         )
     nickname = []
     mail = ""
-    is_sur_name = False
+    is_name = True
     i_name = []
     i_sur_name = []
     phone = ["++7"]
