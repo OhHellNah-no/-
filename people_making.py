@@ -6,7 +6,7 @@ alphabet = ["a", "b", "c", "d", "e", "f", "g", "h",
             "q", "r", "s", "t", "u", "v", "w", "x",
             "y", "z"]
 domens = ["@yandex.ru", "@mail.ru", "@Gmail.com",
-          "@hc.ru", "@r01.ru", "@reg.ru", "@sweb.ru"]
+          "@hc.ru", "@r.ru", "@reg.ru", "@sweb.ru"]
 nickname = []
 a = 1
 mail = ""
