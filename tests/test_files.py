@@ -8,7 +8,7 @@ TITLES = ['Name', 'Surname', 'Phone', 'Nickname', 'Email']
 
 NAME_PATTERN = re.compile(r'^[A-Z][a-z]*$')
 SURNAME_PATTERN = re.compile(r'^[A-Z][a-z]*$')
-PHONE_PATTERN = re.compile(r'^\++7-\d{3}-\d{3}-\d{2}-\d{2}$')
+PHONE_PATTERN = re.compile(r'^\+7-\d{3}-\d{3}-\d{2}-\d{2}$')
 NICKNAME_PATTERN = re.compile(r'^[a-zA-Z0-9][a-zA-Z0-9_]*[a-zA-Z0-9]$')
 EMAIL_PATTERN = re.compile(r'^[a-zA-Z0-9][a-zA-Z0-9_]*[a-zA-Z0-9]@([a-zA-Z]+\.)+[a-zA-Z]+$')
 
