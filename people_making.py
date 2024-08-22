@@ -16,7 +16,7 @@ with open(f"users_{USERS_GOAL}.csv", "w", newline="") as file:
          "Nickname", "Email")
     )
 
-rchoise = lambda x:random.choice(x)
+rchoiсe = lambda x:random.choice(x)
 rint = lambda x, y:random.randint(x, y)
 
 for _ in range(USERS_GOAL):
@@ -30,10 +30,10 @@ for _ in range(USERS_GOAL):
 
     nickname = ''
     for _ in range(rint(9, 19)):
-        nickname += rchoise(alphabet)
+        nickname += rchoiсe(alphabet)
     nickname = f"{nickname[:2]}_{nickname[2:]}"
     
-    mail = nickname + rchoise(domens)
+    mail = nickname + rchoiсe(domens)
     
     with open(f"users_{USERS_GOAL}.csv", "a", newline="") as file:
         writer = csv.writer(file, delimiter=";")
