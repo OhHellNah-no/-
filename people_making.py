@@ -1,5 +1,7 @@
 from faker import Faker
-import csv import random import string
+import csv
+import random
+import string
 fake = Faker()
 USERS_GOAL = 10
 alphabet = string.ascii_lowercase + string.digits
@@ -11,10 +13,8 @@ with open(f"users_{USERS_GOAL}.csv", "w", newline="") as file:
         ("Name", "Surname", "Phone",
          "Nickname", "Email")
     )
-rchoise = lambda x:
-    random.choice(x)
-rint = lambda x, y:
-    random.randint(x, y)
+rchoise = lambda x:random.choice(x)
+rint = lambda x, y:random.randint(x, y)
 for _ in range(USERS_GOAL):
     person = fake.name()
     while ("." in person):
@@ -27,7 +27,7 @@ for _ in range(USERS_GOAL):
         nickname += rchoise(alphabet)
     nickname = f"{nickname[:2]}_{nickname[2:]}"
     mail = nickname + rchoise(domens)
-    with open(f"users_{USERS_GOAL}.csv", "w", newline="") as file:
+    with open(f"users_{USERS_GOAL}.csv", "a", newline="") as file:
         writer = csv.writer(file, delimiter=";")
         writer.writerow(
             (name, surname, phone, nickname, mail)
