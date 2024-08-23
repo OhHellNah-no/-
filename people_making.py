@@ -11,6 +11,7 @@ domens = ["@yandex.ru", "@mail.ru", "@Gmail.com",
 
 rchoiсe = lambda x: random.choice(x)
 rint = lambda x, y: random.randint(x, y)
+
 def generation():
 
     with open(f"users_{USERS_GOAL}.csv", "w", newline="") as file:
@@ -33,7 +34,7 @@ def generation():
         for _ in range(rint(9, 19)):
             nickname += rchoiсe(alphabet)
         nickname = f"{nickname[:2]}_{nickname[2:]}"
-    
+
         mail = nickname + rchoiсe(domens)
 
         with open(f"users_{USERS_GOAL}.csv", "a", newline="") as file:
@@ -41,5 +42,6 @@ def generation():
             writer.writerow(
                 (name, surname, phone, nickname, mail)
             )
+
 if __name__ == "__main__":
     generation()
