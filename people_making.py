@@ -9,16 +9,17 @@ alphabet = string.ascii_lowercase + string.digits
 domens = ["@yandex.ru", "@mail.ru", "@Gmail.com",
           "@hc.ru", "@r.ru", "@reg.ru", "@sweb.ru"]
 
-with open(f"users_{USERS_GOAL}.csv", "w", newline="") as file:
+rchoiсe = lambda x:random.choice(x)
+rint = lambda x, y:random.randint(x, y)
+def generation():
+    
+    with open(f"users_{USERS_GOAL}.csv", "w", newline="") as file:
     writer = csv.writer(file, delimiter=";")
     writer.writerow(
         ("Name", "Surname", "Phone",
          "Nickname", "Email")
     )
-
-rchoiсe = lambda x:random.choice(x)
-rint = lambda x, y:random.randint(x, y)
-def generation():
+    
     for _ in range(USERS_GOAL):
         person = fake.name()
         while ("." in person):
